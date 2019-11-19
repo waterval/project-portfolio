@@ -5,6 +5,19 @@
     font-family: Merriweather, arial, sans-serif;
 }
 
+html {
+    overflow-y: scroll;
+}
+
+body {
+    overflow: auto;
+}
+
+body,
+html {
+    height: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -138,6 +151,16 @@ footer {
 
 .footer-text {
     color: white;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    border-left: 1px solid #d9d9d9;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 4px;
 }
 
 @media only screen and (max-width: 768px) {
