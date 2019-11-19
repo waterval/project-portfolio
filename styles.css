@@ -23,6 +23,29 @@ li {
     font-size: 14px;
 }
 
+button {
+    color: black;
+    font-size: 14px;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 20px;
+    transition-duration: 0.2s;
+    background-color: white;
+    padding: 4px 30px;
+    cursor: pointer;
+    margin: 1em 0;
+}
+
+button:hover {
+    color: white;
+    background-color: #000000;
+}
+
+button:active {
+    position: relative;
+    top: 1px;
+}
+
 header {
     position: relative;
     background: black;
