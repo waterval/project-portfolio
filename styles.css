@@ -1,21 +1,17 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    text-align: center;
     font-family: Merriweather, arial, sans-serif;
 }
 
-html {
-    overflow-y: scroll;
-}
-
 body {
-    overflow: auto;
-}
-
-body,
-html {
-    height: 100%;
+    width: 100vw;
+    height: 150vh;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    background-color: #000;
+    overscroll-behavior-y: none;
+    overflow-x: hidden;
 }
 
 h1,
@@ -23,44 +19,51 @@ h2,
 h3,
 h4 {
     font-family: Raleway, arial, sans-serif;
+    text-align: center;
 }
 
-h1,
 h2 {
-    color: white;
+    font-size: 20px;
 }
 
 h3 {
-    font-size: 1.2em;
-    margin: 1em;
+    font-size: 18px;
 }
 
 h4 {
     margin: 0.5em;
+    font-size: 16px;
 }
 
-p {
-    font-size: 14px;
-    line-height: 2em;
-}
-
-main > p {
-    width: 60%;
-    margin: 0.5em auto;
-}
-
-ul {
+main {
+    position: relative;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    width: 100%;
-    padding-left: 0;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    background-color: black;
+    z-index: 600;
 }
 
-li {
-    display: block;
+main p {
+    width: 80%;
+    font-size: 0.6em;
     line-height: 2em;
-    font-size: 14px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    main p {
+        width: 100%;
+    }
+}
+
+main h3 {
+    width: 80%;
+    font-size: 1.2em;
+    margin: 1em;
 }
 
 button {
@@ -86,47 +89,127 @@ button:active {
     top: 1px;
 }
 
-header {
-    position: relative;
-    background: black;
+.parallax-container {
+    width: 100vw;
+    height: 1200px;
+    --y: 0;
+}
+
+@media (min-width: 1500px) {
+    .parallax-container {
+        height: 50vw;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .parallax-container {
+        height: 736px;
+    }
+}
+
+.parallax-container img {
     width: 100%;
-    height: 5em;
-    padding: 0.5em;
-    box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 1);
-    margin-bottom: 2em;
+    height: 1200px;
+    object-fit: cover;
+    object-position: top;
 }
 
-main {
-    background: white;
-    margin: 0 auto;
+@media (min-width: 1500px) {
+    .parallax-container img {
+        height: 50vw;
+    }
 }
 
-footer {
-    height: 2.5em;
-    background: black;
-    box-shadow: 0px -5px 5px 3px rgba(0, 0, 0, 1);
-    margin-top: 1em;
+@media only screen and (max-width: 768px) {
+    .parallax-container img {
+        height: 736px;
+    }
+}
+
+.parallax-container .title {
+    word-spacing: 100vw;
+    left: 35%;
+    transform: translate(-50%, 100px);
+    font-size: calc(30px + 5vw);
+    letter-spacing: 5px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.parallax-container .parallax-item {
+    position: absolute;
+}
+
+.parallax-container .parallax-item:nth-child(1) {
+    will-change: transform;
+    transform: translateY(calc(var(--y) * -0.3));
+    z-index: 200;
+}
+
+.parallax-container .parallax-item:nth-child(2) {
+    z-index: 300;
+}
+
+.parallax-container .parallax-item:nth-child(3) {
+    will-change: transform;
+    transform: translateY(calc(var(--y) * -0.6));
+    z-index: 400;
+}
+
+.parallax-container .parallax-item:nth-child(4) {
+    z-index: 500;
+}
+
+.parallax-container .parallax {
+    position: fixed;
 }
 
 .project-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    text-align: center;
     margin: 1em auto;
     max-width: 1000px;
 }
 
-.project-item {
+@media only screen and (max-width: 768px) {
+    .project-container {
+        display: block;
+    }
+}
+
+.project-container .project-item {
     flex: 1 1 33%;
     max-width: 320px;
     margin: 0.5em auto;
     box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1), 0 0 0 1px #d9d9d9;
     border-radius: 20px;
     padding: 0.5em;
+    background-color: black;
 }
 
-.project-item-image:hover {
+.project-container .project-item-image:hover {
     filter: brightness(75%);
+}
+
+.project-container .project-item ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-left: 0;
+}
+
+.project-container .project-item li {
+    display: block;
+    line-height: 2em;
+    font-size: 14px;
+}
+
+.project-container .project-item p {
+    text-align: center;
+    width: 100%;
 }
 
 .company-container {
@@ -136,43 +219,35 @@ footer {
     max-width: 640px;
 }
 
-.company-item {
+.company-container .company-item {
     margin: 0.5em auto;
     box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1), 0 0 0 1px #d9d9d9;
     border-radius: 20px;
 }
 
-.company-logo {
+.company-container .company-logo {
     margin: 30px;
     width: 240px;
     height: 50px;
     filter: grayscale(100%);
 }
 
-.footer-text {
+footer {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 2em;
+    background: black;
     color: white;
+    z-index: 600;
 }
 
 ::-webkit-scrollbar {
-    width: 4px;
-    border-left: 1px solid #d9d9d9;
+    width: 15px;
+    border-left: 15px solid #d9d9d9;
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: black;
-    border-radius: 4px;
-}
-
-@media only screen and (max-width: 768px) {
-    main {
-        width: 100%;
-    }
-
-    main > p {
-        width: 100%;
-    }
-
-    .project-container {
-        display: block;
-    }
+    border-radius: 15px;
 }

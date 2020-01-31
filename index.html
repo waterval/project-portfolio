@@ -9,7 +9,7 @@
         <meta name="language" content="EN" />
         <meta name="owner" content="Luuk van Langen" />
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:type" content="article" />
         <meta
             property="og:title"
@@ -25,9 +25,32 @@
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <header>
-            <h1>Luuk van Langen</h1>
-            <h2>Web developer</h2>
+        <header class="parallax-container">
+            <picture class="parallax-item parallax">
+                <source srcset="public/sky-1920.webp" type="image/webp" />
+                <source srcset="public/sky-1920.png" type="image/png" />
+                <img
+                    src="images/sky-1920.png"
+                    alt="luuk van langen on a mountain with a lake and a sky"
+                />
+            </picture>
+            <div class="parallax-item parallax title">Luuk van Langen</div>
+            <picture class="parallax-item parallax">
+                <source srcset="public/lake-1920.webp" type="image/webp" />
+                <source srcset="public/lake-1920.png" type="image/png" />
+                <img
+                    src="images/lake-1920.png"
+                    alt="luuk van langen on a mountain with a lake"
+                />
+            </picture>
+            <picture class="parallax-item">
+                <source srcset="public/mountain-1920.webp" type="image/webp" />
+                <source srcset="public/mountain-1920.png" type="image/png" />
+                <img
+                    src="images/mountain-1920.png"
+                    alt="luuk van langen on a mountain"
+                />
+            </picture>
         </header>
         <main>
             <h3>Hi, I am Luuk. Pleased to meet you.</h3>
@@ -377,7 +400,8 @@
             >
         </main>
         <footer>
-            <p class="footer-text">With <3 from Berlin</p>
+            <p>With <3 from Berlin</p>
         </footer>
+        <script src="script.js"></script>
     </body>
 </html>
