@@ -21,5 +21,5 @@ if ("IntersectionObserver" in window) {
 
     observer.observe(referenceImage);
 } else {
-    window.addEventListener("scroll", userScrolls, scrollOptions);
+    window.addEventListener("scroll", onScroll, scrollOptions);
 }
