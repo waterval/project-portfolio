@@ -1,3 +1,10 @@
+//Initialize Animate on Scroll (AOS):
+AOS.init({
+    easing: "ease-in-out-back",
+    duration: 3000
+});
+
+//Initialize parallax 3D effect:
 const scrollOptions = { capture: false, passive: true };
 
 function onScroll() {
