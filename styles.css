@@ -13,6 +13,10 @@ body {
     overscroll-behavior-y: none;
 }
 
+a {
+    color: #00884a;
+}
+
 h1,
 h2,
 h3,
@@ -135,9 +139,23 @@ main p {
 }
 
 main h3 {
-    width: 80%;
     font-size: 1.2em;
     margin: 1em;
+}
+
+.project-wrapper {
+    background-image: url("public/leaves-background.png");
+    background-image: -webkit-image-set(
+        url("public/leaves-background.webp") 1x
+    );
+    width: 100%;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 768px) {
+    .project-wrapper {
+        background-repeat: space;
+    }
 }
 
 .project-container {
@@ -158,15 +176,17 @@ main h3 {
 
 .project-container .project-item {
     flex: 1 1 33%;
-    max-width: 320px;
+    max-width: 300px;
     margin: 0.5em auto;
-    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1), 0 0 0 1px #d9d9d9;
-    border-radius: 20px;
-    padding: 0.5em;
+    background-color: black;
+}
+
+.project-container .project-item-image {
+    filter: invert(1);
 }
 
 .project-container .project-item-image:hover {
-    filter: brightness(75%);
+    filter: brightness(100%);
 }
 
 .project-container .project-item ul {
@@ -189,20 +209,19 @@ main h3 {
 }
 
 button {
-    color: black;
+    color: white;
     font-size: 14px;
+    font-weight: bold;
     text-decoration: none;
-    border: 2px solid black;
-    border-radius: 20px;
+    border: 2px solid #00884a;
     transition-duration: 0.2s;
-    background-color: white;
-    padding: 4px 30px;
+    background-color: #00884a;
+    padding: 15px 60px;
     cursor: pointer;
     margin: 1em 0;
 }
 
 button:hover {
-    color: white;
     background-color: #000000;
 }
 
@@ -220,15 +239,13 @@ button:active {
 
 .company-container .company-item {
     margin: 0.5em auto;
-    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1), 0 0 0 1px #d9d9d9;
-    border-radius: 20px;
 }
 
 .company-container .company-logo {
     margin: 30px;
     width: 240px;
     height: 50px;
-    filter: grayscale(100%);
+    filter: grayscale(100%) invert(1);
 }
 
 footer {
