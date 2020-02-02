@@ -11,7 +11,6 @@ body {
     font-size: 14px;
     background-color: #000;
     overscroll-behavior-y: none;
-    overflow-x: hidden;
 }
 
 h1,
@@ -33,60 +32,6 @@ h3 {
 h4 {
     margin: 0.5em;
     font-size: 16px;
-}
-
-main {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 25px;
-    color: white;
-    background-color: black;
-    z-index: 600;
-}
-
-main p {
-    width: 80%;
-    font-size: 0.6em;
-    line-height: 2em;
-    text-align: center;
-}
-
-@media only screen and (max-width: 768px) {
-    main p {
-        width: 100%;
-    }
-}
-
-main h3 {
-    width: 80%;
-    font-size: 1.2em;
-    margin: 1em;
-}
-
-button {
-    color: black;
-    font-size: 14px;
-    text-decoration: none;
-    border: 2px solid black;
-    border-radius: 20px;
-    transition-duration: 0.2s;
-    background-color: white;
-    padding: 4px 30px;
-    cursor: pointer;
-    margin: 1em 0;
-}
-
-button:hover {
-    color: white;
-    background-color: #000000;
-}
-
-button:active {
-    position: relative;
-    top: 1px;
 }
 
 .parallax-container {
@@ -164,6 +109,37 @@ button:active {
     position: fixed;
 }
 
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    background-color: black;
+    z-index: 600;
+}
+
+main p {
+    width: 80%;
+    font-size: 0.6em;
+    line-height: 2em;
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    main p {
+        width: 100%;
+    }
+}
+
+main h3 {
+    width: 80%;
+    font-size: 1.2em;
+    margin: 1em;
+}
+
 .project-container {
     display: flex;
     justify-content: center;
@@ -171,6 +147,7 @@ button:active {
     text-align: center;
     margin: 1em auto;
     max-width: 1000px;
+    overflow: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -186,7 +163,6 @@ button:active {
     box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1), 0 0 0 1px #d9d9d9;
     border-radius: 20px;
     padding: 0.5em;
-    background-color: black;
 }
 
 .project-container .project-item-image:hover {
@@ -210,6 +186,29 @@ button:active {
 .project-container .project-item p {
     text-align: center;
     width: 100%;
+}
+
+button {
+    color: black;
+    font-size: 14px;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 20px;
+    transition-duration: 0.2s;
+    background-color: white;
+    padding: 4px 30px;
+    cursor: pointer;
+    margin: 1em 0;
+}
+
+button:hover {
+    color: white;
+    background-color: #000000;
+}
+
+button:active {
+    position: relative;
+    top: 1px;
 }
 
 .company-container {
@@ -240,14 +239,4 @@ footer {
     background: black;
     color: white;
     z-index: 600;
-}
-
-::-webkit-scrollbar {
-    width: 15px;
-    border-left: 15px solid #d9d9d9;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: black;
-    border-radius: 15px;
 }
