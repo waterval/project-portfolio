@@ -11,6 +11,7 @@ body {
     font-size: 14px;
     background-color: #000;
     overscroll-behavior-y: none;
+    overflow-x: hidden;
 }
 
 a {
@@ -58,7 +59,7 @@ h4 {
 
 .parallax-container img {
     width: 100%;
-    height: 1200px;
+    height: 1205px;
     object-fit: cover;
     object-position: top;
 }
@@ -126,7 +127,7 @@ main {
 }
 
 main p {
-    width: 80%;
+    width: 60%;
     font-size: 0.6em;
     line-height: 2em;
     text-align: center;
@@ -134,7 +135,7 @@ main p {
 
 @media only screen and (max-width: 768px) {
     main p {
-        width: 100%;
+        width: 95%;
     }
 }
 
@@ -154,7 +155,12 @@ main h3 {
 
 @media only screen and (max-width: 768px) {
     .project-wrapper {
-        background-repeat: space;
+        background-image: url("public/leaves-background-tile.png");
+        background-image: -webkit-image-set(
+            url("public/leaves-background-tile.webp") 1x
+        );
+        background-repeat: repeat;
+        background-size: contain;
     }
 }
 
@@ -208,6 +214,10 @@ main h3 {
     width: 100%;
 }
 
+.project-container .project-item > div {
+    margin: 20px 0;
+}
+
 button {
     color: white;
     font-size: 14px;
@@ -219,6 +229,7 @@ button {
     padding: 15px 60px;
     cursor: pointer;
     margin: 1em 0;
+    max-width: 300px;
 }
 
 button:hover {
@@ -228,6 +239,11 @@ button:hover {
 button:active {
     position: relative;
     top: 1px;
+}
+
+li {
+    line-height: 2em;
+    font-size: 14px;
 }
 
 .company-container {
@@ -246,6 +262,19 @@ button:active {
     width: 240px;
     height: 50px;
     filter: grayscale(100%) invert(1);
+}
+
+.waterfall-image {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.waterfall-image img {
+    max-width: 100%;
+}
+
+.waterfall-image source {
+    max-width: 100%;
 }
 
 footer {
