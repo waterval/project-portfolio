@@ -31,7 +31,9 @@ h2 {
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 1.2em;
+    margin: 1em;
+    background-color: black;
 }
 
 h4 {
@@ -139,11 +141,6 @@ main p {
     }
 }
 
-main h3 {
-    font-size: 1.2em;
-    margin: 1em;
-}
-
 .project-wrapper {
     background-image: url("public/leaves-background.png");
     background-image: -webkit-image-set(
@@ -241,11 +238,6 @@ button:active {
     top: 1px;
 }
 
-li {
-    line-height: 2em;
-    font-size: 14px;
-}
-
 .company-container {
     display: flex;
     flex-wrap: wrap;
@@ -264,17 +256,40 @@ li {
     filter: grayscale(100%) invert(1);
 }
 
-.waterfall-image {
-    margin-top: 30px;
+.waterfall-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+}
+
+.waterfall-item {
+    width: 500px;
+    margin: 1em auto;
     text-align: center;
 }
 
-.waterfall-image img {
-    max-width: 100%;
+@media only screen and (max-width: 768px) {
+    .waterfall-item {
+        display: block;
+    }
 }
 
-.waterfall-image source {
-    max-width: 100%;
+.waterfall-item picture img,
+.waterfall-item picture source {
+    margin: 0 auto;
+    width: 75%;
+}
+
+.waterfall-item p {
+    width: 100%;
+    line-height: 2em;
+    text-align: left;
+}
+
+@media only screen and (max-width: 1000px) {
+    .waterfall-item p {
+        text-align: center;
+    }
 }
 
 footer {
