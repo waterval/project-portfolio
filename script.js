@@ -1,7 +1,8 @@
 //Initialize Animate on Scroll (AOS):
 AOS.init({
     easing: "ease-in-out-back",
-    duration: 2000
+    duration: 250,
+    once: true
 });
 
 //Initialize parallax 3D effect:
